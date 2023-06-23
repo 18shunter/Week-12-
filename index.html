@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Parts Inventory</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: lightblue;
+      color: darkred;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .part {
+      border: 2px solid purple;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: lightyellow;
+    }
+
+    .part h4 {
+      margin-top: 0;
+    }
+
+    .part p {
+      margin-bottom: 0;
+    }
+
+    .part-actions {
+      margin-top: 10px;
+    }
+
+    .edit-part,
+    .delete-part {
+      color: white;
+    }
+
+    .edit-part {
+      background-color: darkblue;
+    }
+
+    .delete-part {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Car Parts Inventory</h1>
+    <form id="partForm">
+      <div class="form-group">
+        <label for="partName">Part Name:</label>
+        <input type="text" class="form-control" id="partName" required>
+      </div>
+      <div class="form-group">
+        <label for="partDescription">Part Description:</label>
+        <textarea class="form-control" id="partDescription" rows="3" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="partPriceDollars">Part Price:</label>
+        <div class="input-group">
+          <input type="number" class="form-control" id="partPriceDollars" min="0" step="1" required>
+          <div class="input-group-append">
+            <span class="input-group-text">.</span>
+          </div>
+          <input type="number" class="form-control" id="partPriceCents" min="0" max="99" step="1" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Part</button>
+    </form>
+    <hr>
+    <div id="partList"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
